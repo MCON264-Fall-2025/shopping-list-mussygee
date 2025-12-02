@@ -25,12 +25,15 @@ public class ShoppingListAppTest {
     // Small helper to extract list contents as strings for easier assertions
     private List<String> toStringList(ListInterface<ShoppingItem> list) {
         List<String> result = new ArrayList<>();
-        for (ShoppingItem item : list) {
+
+        for (int i = 0; i < list.size(); i++) {
+            ShoppingItem item = list.get(i);
             // encode as "aisle:name" for easier comparison
             result.add(item.getAisle() + ":" + item.getName());
         }
         return result;
     }
+
 
     // ---------- Tests for insertSorted (ArrayBasedList) ----------
 
